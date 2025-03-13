@@ -3,251 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gon Services - Custom Discord Bots</title>
-
-    <meta property="og:title" content="Gon Services - Custom Discord Bots" />
-    <meta property="og:description" content="Enhance your Discord server with advanced and secure bots, 24/7 hosting, and automated features with our paid plans." />
-    <meta property="og:image" content="images/killua.png" />
-    <meta property="og:image:alt" content="Gon Services Logo" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://yourdomain.com" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gon Services - Custom Discord Bots" />
-    <meta name="twitter:description" content="Enhance your Discord server with advanced and secure bots, 24/7 hosting, and automated features with our paid plans." />
-    <meta name="twitter:image" content="images/killua.png" />
-
+    <title>Killua Portal</title>
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #0A0A0A;
-            color: #fff;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 1rem;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            background: linear-gradient(to right, #f1f1f1, #9ca3af);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            color: #9ca3af;
-            font-size: 1.125rem;
-            max-width: 36rem;
-            margin: 0 auto;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            position: relative;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            border: 1px solid rgba(75, 85, 99, 0.3);
-            background-color: rgba(24, 24, 27, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            border-color: rgba(75, 85, 99, 0.7);
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(to bottom, rgba(24, 24, 27, 0.9), rgba(0, 0, 0, 0.9));
-            border-color: rgba(75, 85, 99, 0.8);
-        }
-
-        .pricing-card.featured::before {
-            content: "Most Popular";
-            position: absolute;
-            top: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(to right, #e5e7eb, #9ca3af);
-            color: #000;
-            padding: 0.25rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .plan-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .price {
-            font-size: 2.25rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: #9ca3af;
-        }
-
-        .features {
-            list-style: none;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(75, 85, 99, 0.5);
-        }
-
-        .features li {
-            color: #d1d5db;
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .features li::before {
-            content: "✓";
-            margin-right: 0.75rem;
-            color: #9ca3af;
-        }
-
-        .redirect-buttons {
+            font-family: monospace;
+            background-color: #12121e;
+            color: white;
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 4rem;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+            cursor: pointer; /* Make cursor a pointer to indicate clickable area */
         }
-
-        .redirect-button {
-            display: inline-block;
+        
+        /* Container for buttons */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            width: 100%;
+        }
+        
+        /* Button styles */
+        .button {
+            display: block;
+            width: 100%;
             padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 1rem;
+            background-color: #1a1a2e;
+            color: white;
             text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 1rem;
+            text-align: center;
+            border-radius: 9999px; /* Fully rounded */
+            border: 1px solid #2a2a3e;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
         }
-
-        .telegram-button {
-            background-color: #0088cc;
-            color: white;
+        
+        /* Glow effect on hover */
+        .button:hover {
+            background-color: #1a1a2e;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                        0 0 20px rgba(255, 255, 255, 0.2),
+                        0 0 30px rgba(160, 196, 255, 0.1);
+            transform: translateY(-2px);
         }
-
-        .telegram-button:hover {
-            background-color: #0077b5;
-        }
-
-        .discord-button {
-            background-color: #5865F2;
-            color: white;
-        }
-
-        .discord-button:hover {
-            background-color: #4752C4;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .redirect-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .redirect-button {
-                width: 100%;
-                text-align: center;
-            }
+        
+        /* Last button doesn't need margin-bottom */
+        .button:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h1>View Our Plans Below</h1>
-            <p>Enhance your Discord server with advanced and secure bots and automated features. Our plans are paid monthly. We provide 24/7 hosting and will never leak/sell your bot info. Plan may be automatically changed depending on command requests.</p>
-        </header>
-
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h2 class="plan-name">Basic</h2>
-                <div class="price">$10<span>/month</span></div>
-                <ul class="features">
-                    <li>Up to 5 Discord Commands</li>
-                    <li>Basic Support</li>
-                    <li>24/7 Uptime</li>
-                    <li>Community support</li>
-                </ul>
-            </div>
-
-            <div class="pricing-card featured">
-                <h2 class="plan-name">Pro</h2>
-                <div class="price">$15<span>/month</span></div>
-                <ul class="features">
-                    <li>Up to 10 Discord Commands</li>
-                    <li>Custom commands</li>
-                    <li>Priority support</li>
-                    <li>24/7 Uptime</li>
-                    <li>Everything in Basic plan</li>
-                </ul>
-            </div>
-
-            <div class="pricing-card">
-                <h2 class="plan-name">Advanced</h2>
-                <div class="price">$30<span>/month</span></div>
-                <ul class="features">
-                    <li>Advanced Custom Discord Bot</li>
-                    <li>Live Logging</li>
-                    <li>Verified Discord Bot</li>
-                    <li>Advanced Embeds</li>
-                    <li>24/7 premium support</li>
-                    <li>24/7 Uptime</li>
-                    <li>VIP Channel Access</li>
-                    <li>Everything in Pro plan</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="redirect-buttons">
-            <a href="https://t.me/skippas" class="redirect-button telegram-button">Message on Telegram</a>
-            <a href="https://discord.gg/exams" class="redirect-button discord-button">Message on Discord</a>
-        </div>
+        <a href="https://discord.gg/killua" class="button" target="_blank">discord</a>
+        <a href="https://t.me/skippas" class="button" target="_blank">telegram</a>
     </div>
+
+    <audio id="killuaAudio" src="killua.mp3"></audio>
+
+    <script>
+        // Add event listener to the body to play the audio on any click
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('killuaAudio');
+            audio.play();
+        });
+    </script>
 </body>
 </html>
